@@ -1,0 +1,33 @@
+.search-bar {
+    display: flex;
+    gap: var(--spacing-sm);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.25rem;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding-left: 3rem !important;
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .search-bar {
+        flex-direction: column;
+    }
+}

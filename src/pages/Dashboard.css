@@ -1,0 +1,85 @@
+.dashboard {
+    min-height: 100vh;
+    padding: var(--spacing-xl) 0;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.dashboard-subtitle {
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+.profile-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+.profile-card h2 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 80px;
+}
+
+.info-value {
+    color: var(--text-primary);
+}
+
+.my-listings h2 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.5rem;
+}
+
+.room-card-wrapper {
+    position: relative;
+}
+
+.room-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: var(--spacing-sm);
+    margin-top: calc(-1 * var(--spacing-sm));
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.finder-section {
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+    }
+}
