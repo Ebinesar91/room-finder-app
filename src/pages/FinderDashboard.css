@@ -1,0 +1,241 @@
+.finder-dashboard {
+    min-height: 100vh;
+    background: var(--bg-primary);
+}
+
+/* Hero Section with Finder Theme (Blue) */
+.finder-hero {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, hsl(195, 93%, 15%) 0%, hsl(168, 76%, 15%) 100%);
+    overflow: hidden;
+}
+
+.finder-hero-background {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 50%, hsla(195, 93%, 52%, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, hsla(168, 76%, 42%, 0.1) 0%, transparent 50%);
+}
+
+.finder-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.finder-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    background: linear-gradient(135deg, hsl(195, 93%, 62%) 0%, hsl(168, 76%, 52%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+}
+
+.finder-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.finder-search-wrapper {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.quick-action-btn:hover {
+    background: var(--bg-secondary);
+    border-color: hsl(195, 93%, 52%);
+    transform: translateY(-2px);
+}
+
+.action-icon {
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+.finder-content {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Finder Stats */
+.finder-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.stat-box:hover {
+    border-color: hsl(195, 93%, 52%);
+    transform: translateY(-2px);
+}
+
+.stat-box .stat-icon {
+    font-size: 2.5rem;
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Saved Rooms Section */
+.saved-rooms-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Tips Section */
+.tips-section {
+    background: var(--bg-glass);
+    padding: var(--spacing-lg);
+}
+
+.tips-section h3 {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.tip-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+}
+
+.tip-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.tip-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: hsl(195, 93%, 62%);
+}
+
+.tip-item p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .finder-hero {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .finder-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}

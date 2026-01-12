@@ -24,7 +24,7 @@ export const RoomList = ({ rooms, loading }) => {
     return (
         <div className="room-list grid grid-3">
             {rooms.map((room) => (
-                <RoomCard key={room.id} room={room} />
+                <RoomCard key={room.id} room={room} showBookmark={true} />
             ))}
         </div>
     );

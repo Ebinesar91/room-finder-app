@@ -23,19 +23,35 @@ export const Navbar = () => {
                 </Link>
 
                 <div className="navbar-links">
-                    <Link to="/explore" className="nav-link">
-                        Explore
-                    </Link>
-
                     {user ? (
                         <>
-                            <Link to="/dashboard" className="nav-link">
-                                Dashboard
+                            {/* Common Links */}
+                            <Link to="/explore" className="nav-link">
+                                Explore
                             </Link>
 
-                            {profile?.role === 'owner' && (
-                                <Link to="/post-room" className="nav-link btn btn-primary">
-                                    Post Room
+                            {/* Role-Specific Links */}
+                            {profile?.role === 'finder' ? (
+                                <>
+                                    <Link to="/finder-dashboard" className="nav-link">
+                                        My Saved Rooms
+                                    </Link>
+                                    <Link to="/finder-dashboard" className="nav-link">
+                                        Dashboard
+                                    </Link>
+                                </>
+                            ) : profile?.role === 'owner' ? (
+                                <>
+                                    <Link to="/owner-dashboard" className="nav-link">
+                                        Dashboard
+                                    </Link>
+                                    <Link to="/post-room" className="nav-link btn btn-primary">
+                                        Post Room
+                                    </Link>
+                                </>
+                            ) : (
+                                <Link to="/dashboard" className="nav-link">
+                                    Dashboard
                                 </Link>
                             )}
 
@@ -50,6 +66,9 @@ export const Navbar = () => {
                         </>
                     ) : (
                         <>
+                            <Link to="/explore" className="nav-link">
+                                Explore
+                            </Link>
                             <Link to="/login" className="nav-link">
                                 Login
                             </Link>

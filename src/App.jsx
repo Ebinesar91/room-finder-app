@@ -7,6 +7,8 @@ import { Register } from './components/auth/Register';
 import { Home } from './pages/Home';
 import { Explore } from './pages/Explore';
 import { Dashboard } from './pages/Dashboard';
+import { FinderDashboard } from './pages/FinderDashboard';
+import { OwnerDashboard } from './pages/OwnerDashboard';
 import { PostRoom } from './pages/PostRoom';
 import './index.css';
 
@@ -27,6 +29,24 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/finder-dashboard"
+              element={
+                <ProtectedRoute requiredRole="finder">
+                  <FinderDashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/owner-dashboard"
+              element={
+                <ProtectedRoute requiredRole="owner">
+                  <OwnerDashboard />
                 </ProtectedRoute>
               }
             />
