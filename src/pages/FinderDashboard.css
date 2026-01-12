@@ -219,11 +219,41 @@
 /* Responsive */
 @media (max-width: 768px) {
     .finder-hero {
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-md) 0;
+    }
+
+    .finder-title {
+        font-size: 1.75rem;
+    }
+
+    .finder-subtitle {
+        font-size: 1rem;
+    }
+
+    .finder-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .quick-actions {
+        gap: 0.5rem;
+    }
+
+    .quick-action-btn {
+        padding: 0.65rem 1.25rem;
+        font-size: 0.9rem;
     }
 
     .finder-stats {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-box {
+        padding: var(--spacing-sm);
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
     }
 
     .rooms-grid {
@@ -237,5 +267,33 @@
 
     .tips-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .finder-title {
+        font-size: 1.5rem;
+    }
+
+    .finder-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .quick-action-btn {
+        flex: 1 1 100%;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .tip-icon {
+        font-size: 1.5rem;
     }
 }
