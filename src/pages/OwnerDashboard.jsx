@@ -30,19 +30,37 @@ export const OwnerDashboard = () => {
     const loadDashboardData = async () => {
         setLoading(true);
         try {
-            // Load stats
-            const statsData = await analyticsService.getOwnerStats(user.id);
-            setStats(statsData);
+            // Load stats - use try/catch to handle missing tables
+            try {
+                const statsData = await analyticsService.getOwnerStats(user.id);
+                setStats(statsData);
+            } catch (statsError) {
+                console.log('Analytics not yet available:', statsError);
+                // Set default stats if analytics table doesn't exist
+                setStats({
+                    totalListings: 0,
+                    activeListings: 0,
+                    totalViews: 0,
+                    totalRevenue: 0,
+                    totalInquiries: 0,
+                });
+            }
 
             // Load rooms
             const roomsData = await roomService.getRoomsByOwner(user.id);
             setMyRooms(roomsData);
 
-            // Load recent inquiries
-            const inquiriesData = await analyticsService.getOwnerInquiries(user.id);
-            setInquiries(inquiriesData.slice(0, 5)); // Show only latest 5
+            // Load recent inquiries - handle if table doesn't exist
+            try {
+                const inquiriesData = await analyticsService.getOwnerInquiries(user.id);
+                setInquiries(inquiriesData.slice(0, 5)); // Show only latest 5
+            } catch (inquiryError) {
+                console.log('Inquiries not yet available:', inquiryError);
+                setInquiries([]);
+            }
         } catch (error) {
             console.error('Error loading dashboard:', error);
+            alert('Error loading dashboard. Please refresh the page.');
         } finally {
             setLoading(false);
         }

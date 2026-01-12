@@ -26,6 +26,7 @@ export const Login = () => {
         }
     };
 
+
     const handleVerifyOTP = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -33,7 +34,8 @@ export const Login = () => {
 
         try {
             await authService.verifyOTP(email, otp);
-            navigate('/');
+            // Navigate to dashboard which will redirect to role-specific dashboard
+            navigate('/dashboard');
         } catch (err) {
             setError('Invalid OTP. Please try again.');
         } finally {
